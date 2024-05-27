@@ -9,8 +9,8 @@ class Cuenta:
     def set_titular(self,titular):
         self.titular = titular
 
-    def get_titular(self):
-        return self.titular.nombre
+    def get_titular(self):     
+        return self.titular.nombre , self.titular.edad
     
     def set_cantidad(self,cantidad):
         self.cantidad = cantidad
@@ -21,7 +21,7 @@ class Cuenta:
     # Mostrar los datos de la cuenta
     def mostrar(self):
         print("------------- Datos de la Cuenta -------------")
-        print("Titular:",self.get_titular())
+        print("Titular:",self.get_titular()[0])
         print("Cantidad: ${:.3f}".format(self.get_cantidad()))
         print("-----------------------------------------------")
 
@@ -39,11 +39,14 @@ class Cuenta:
 
 #Se crea la clase Persona con sus atributos (nombre,edad)
 class Persona:
-    def __init__(self,nombre):
+    def __init__(self,nombre,edad):
         self.nombre = nombre
-        
+        self.edad = edad
+      
+
+     
 # Se crea la instancia de la clase Persona   
-titular = Persona("Maria López")
+titular = Persona("Maria López",24)
 
 # Se crea la instancia de la clase Cuenta
 cuenta_1 = Cuenta(titular,100.000)
